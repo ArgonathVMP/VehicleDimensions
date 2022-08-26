@@ -2,23 +2,31 @@
 
 # Vehicle Dimensions API for Real World use [FIVEM]
 
-Join our discord for more developments as we build our FiveM server for Argonath RPG.
+Join our discord for more developments as we build our FiveM server for Argonath RPG. (https://discord.gg/dfTe9M9eTu)
 
-<br>
+***This is our first public release on FiveM :grinning:***
 
 # Key Features
 * Ability to pass Entity to get vehicle layout in the GTA world consisting of Front, Centre and Back and sizing information
 * These API takes into account the vehicle being rotate and displays the correct co-ordinates
 * API for checking if near Front or Back of Vehicle
-* Debug to show where the Front or Back of a Vehicle is located
+* Debug to show where the Front or Back of a Vehicle is located (uncommented by default to prevent resource lag of 0.4% CPU)
 
-<br>
+# Examples on what it can be used for
+* Finding the trunk/boot/bonnet/hood and if the player is near it
+* Can the player reach any section of the vehicle
+* Mounting objects at the correct point on a vehicle
+* Finding the Refuelling position on the vehicle
 
-# Use Case
 
-<br>
+# Download - **FREE**
+* Github: https://github.com/ArgonathVMP/VehicleDimensions
 
-## vehicleLayout - Vehicle Layout API
+
+# API Request / Response
+
+
+## **vehicleLayout** - Vehicle Layout API
 ```lua
 exports['vehicle_dimensions']:vehicleLayout(entity);
 ```
@@ -41,7 +49,7 @@ exports['vehicle_dimensions']:vehicleLayout(entity);
 
 <br>
 
-## isCloseToEntity - Is Player near Front or Back of Vehicle
+## **isCloseToEntity** - Is Player near Front or Back of Vehicle
 ```lua
 exports['vehicle_dimensions']:isCloseToEntity(entity);
 ```
@@ -58,20 +66,15 @@ exports['vehicle_dimensions']:isCloseToEntity(entity);
 
 <br>
 
-## showNearbyVehicle - Show Debug for Vehicle (must be enabled in client.lua)
+## Debug
+
+### The following is commented out so you must uncomment for it to work.
+#### **showNearbyVehicle** - Show Debug for Vehicle (must be enabled in client.lua)
 ```lua
 exports['vehicle_dimensions']:showNearbyVehicle(entity);
 ```
 - Pass in fake entity to hide it
 
-
-<br>
-
-
-<br>
-
-
-<br>
 
 
 <br>
