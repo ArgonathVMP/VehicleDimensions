@@ -5,8 +5,8 @@ local config = {
 local foundVeh = nil;
 local foundVehicleLayout = nil;
 local debug = {
-    front = true,
-    back = true,
+    front = false,
+    back = false,
 }
 
 -- Rotate the box to suit the vehicle heading
@@ -84,32 +84,34 @@ function isCloseToEntity(entity)
     }
 end
 
-function showNearbyVehicle(entity)
-    if DoesEntityExist(entity) then
-        foundVeh = entity;
-        foundVehicleLayout = vehicleLayout(entity)
-    else
-        foundVeh = nil;
-        foundVehicleLayout = nil;
-    end
-end
+
+-- *Uncomment the lines below to enable debug mode*
+
+-- function showNearbyVehicle(entity)
+--     if DoesEntityExist(entity) then
+--         foundVeh = entity;
+--         foundVehicleLayout = vehicleLayout(entity)
+--     else
+--         foundVeh = nil;
+--         foundVehicleLayout = nil;
+--     end
+-- end
 
 
-function displayTrunk(x, y, z)
-    DrawLine(x - config.lineLength, y, z, x + config.lineLength, y, z, 255, 0, 0, 255)
-    DrawLine(x, y - config.lineLength, z, x, y + config.lineLength, z, 0, 255, 0, 255)
-    DrawLine(x, y, z - config.lineLength, x, y, z + config.lineLength, 0, 0, 255, 255)
-end
+-- function displayTrunk(x, y, z)
+--     DrawLine(x - config.lineLength, y, z, x + config.lineLength, y, z, 255, 0, 0, 255)
+--     DrawLine(x, y - config.lineLength, z, x, y + config.lineLength, z, 0, 255, 0, 255)
+--     DrawLine(x, y, z - config.lineLength, x, y, z + config.lineLength, 0, 0, 255, 255)
+-- end
 
-
-Citizen.CreateThread(function()
-	while true do
-		if foundVeh and debug.back and foundVehicleLayout then
-            displayTrunk(foundVehicleLayout.back.x, foundVehicleLayout.back.y, foundVehicleLayout.back.z)
-		end
-		if foundVeh and debug.front and foundVehicleLayout then
-            displayTrunk(foundVehicleLayout.front.x, foundVehicleLayout.front.y, foundVehicleLayout.front.z)
-		end
-		Wait(0)
-	end
-end)
+-- Citizen.CreateThread(function()
+-- 	while true do
+-- 		if foundVeh and debug.back and foundVehicleLayout then
+--             displayTrunk(foundVehicleLayout.back.x, foundVehicleLayout.back.y, foundVehicleLayout.back.z)
+-- 		end
+-- 		if foundVeh and debug.front and foundVehicleLayout then
+--             displayTrunk(foundVehicleLayout.front.x, foundVehicleLayout.front.y, foundVehicleLayout.front.z)
+-- 		end
+-- 		Wait(0)
+-- 	end
+-- end)

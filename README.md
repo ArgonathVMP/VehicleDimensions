@@ -1,4 +1,4 @@
-![LJ Inventory](https://media.moddb.com/images/mods/1/29/28082/auto/WbuHmXG.png)
+![Argonath RPG](https://media.moddb.com/images/mods/1/29/28082/auto/WbuHmXG.png)
 
 # Vehicle Dimensions API for Real World use [FIVEM]
 
